@@ -39,7 +39,7 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 <script src="https://utteranc.es/client.js"
         repo="ucerotk/prueba"
-        issue-term="pathname"
+        issue-term="https://github.com/ucerotk/prueba/issues"
         theme="github-light"
         crossorigin="anonymous"
         async>
