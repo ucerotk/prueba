@@ -35,3 +35,34 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+var url = "https://github.com/dwilliamson/donw.io/issues/" + {{ $.Params.ghcommentid }}
+var api_url = "https://api.github.com/repos/dwilliamson/donw.io/issues/" + {{ $.Params.ghcommentid }} + "/comments"
+
+$(document).ready(function () {
+    $.ajax(api_url, {
+        headers: {Accept: "application/vnd.github.v3.html+json"},
+        dataType: "json",
+        success: function(comments) {
+            $("#gh-comments-list").append("Visit the <b><a href='" + url + "'>Github Issue</a></b> to comment on this post");
+            $.each(comments, function(i, comment) {
+
+                var date = new Date(comment.created_at);
+
+                var t = "<div id='gh-comment'>";
+                t += "<img src='" + comment.user.avatar_url + "' width='24px'>";
+                t += "<b><a href='" + comment.user.html_url + "'>" + comment.user.login + "</a></b>";
+                t += " posted at ";
+                t += "<em>" + date.toUTCString() + "</em>";
+                t += "<div id='gh-comment-hr'></div>";
+                t += comment.body_html;
+                t += "</div>";
+                $("#gh-comments-list").append(t);
+            });
+        },
+        error: function() {
+            $("#gh-comments-list").append("Comments are not open for this post yet.");
+        }
+    });
+});
+
