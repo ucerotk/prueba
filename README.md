@@ -1,10 +1,11 @@
-## Comentarios en Github con utteranc e issues Github
+## Comentarios en Github con utterance e issues Github
 
+Prueba. A continuación van los comentarios: 
 
 <script src="https://utteranc.es/client.js"
         repo="ucerotk/prueba"
-        issue-term="https://github.com/ucerotk/prueba/issues"
-        theme="github-light"
+        issue-term="title"
+        theme="github-dark"
         crossorigin="anonymous"
         async>
 </script>
