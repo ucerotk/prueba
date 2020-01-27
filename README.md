@@ -6,6 +6,7 @@ Prueba. A continuación van los comentarios:
         repo="ucerotk/prueba"
         issue-term="title"
         theme="github-dark"
+        input-position-top="true"
         crossorigin="anonymous"
         async>
 </script>
